@@ -100,16 +100,14 @@ function App() {
   
   return (
     <div className="whole-page">
-      <h1>Build Your Own Screenshot! 📸</h1>
+      <h1>Random Cats Gallary 📸</h1>
       {quota ? (
-        
         <p className="quota">
           Remaining API calls: {quota.remaining} out of {quota.limit}
         </p>
       ) : (
-        <p>123</p>
+        <p></p>
       )}
-      <p>here</p>
 
       <APIForm
         inputs={inputs}
