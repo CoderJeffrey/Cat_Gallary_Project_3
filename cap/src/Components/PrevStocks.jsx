@@ -15,7 +15,7 @@ const PrevStocks = ({prevStocks}) => {
                                     <p> Name: {stock.name} </p>
                                     <p> Phone: {stock.phone} </p>
                                     <p> Weburl: {stock.weburl} </p>
-                                    {/* <p> Logo: {stock.logo} </p> */}
+                                    <img src={stock.logo} alt="logo" />
                                     <p> Country: {stock.country} </p>
                                 </li>
                             </div>

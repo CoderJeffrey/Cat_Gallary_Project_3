@@ -32,10 +32,17 @@ function App() {
   const callAPI = async (query) => {
     const response = await fetch(query);
     const json = await response.json();
+    const filtered = prevStocks.filter((stock) => {
+      return stock.ticker == json.ticker;
+    });
+
 
     // we can check if we didn't receive a url back from our API call (meaning a proper screenshot couldn't be taken) and then make our own message! If we do get a url back, we can make it our currentImage.
     if (json.ticker == null){
       alert("Oops! Something went wrong with that query, let's try again!")
+    } else if (filtered.length > 0){
+      alert("You already searched for this stock!");
+      reset();
     } else {
       setCurrentStock({
         "ticker": json.ticker,
@@ -135,7 +142,7 @@ function App() {
           <p> Name: {currentStock.name} </p>
           <p> Phone: {currentStock.phone} </p>
           <p> Weburl: {currentStock.weburl} </p>
-          <p> Logo: {currentStock.logo} </p>
+          <img src={currentStock.logo} alt="logo" />
           <p> Country: {currentStock.country} </p>
         </div>
       ) : (

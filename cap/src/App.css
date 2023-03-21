@@ -17,7 +17,7 @@ li.form {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 5px;
   border-radius: 8px;
-  background-color: rgba(37, 67, 110, 0.9);
+  background-color: rgba(99, 159, 241, 0.9);
   width: 300px;
 }
 
@@ -75,7 +75,7 @@ input {
   margin-left: 5%;
   margin-right: 5%;
   border-radius: 8px;
-  background-color: rgba(37, 67, 110, 0.9);
+  background-color: rgba(71, 131, 214, 0.9);
 }
 
 .screenshot {
@@ -107,4 +107,5 @@ input {
   max-width: 40%;
   background-color: rgb(150, 194, 233);
   border-radius: 8px;
+  margin: 10px;
 }
