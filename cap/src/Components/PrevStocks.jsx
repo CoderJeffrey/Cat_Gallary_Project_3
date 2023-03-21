@@ -8,15 +8,17 @@ const PrevStocks = ({prevStocks}) => {
                 {
                     prevStocks && prevStocks.length > 0 ? (
                         prevStocks.map((stock, index) => (
-                            <li key={index}>
-                                <p> Ticker: {stock.ticker} </p>
-                                <p> Exchange: {stock.exchange} </p>
-                                <p> Name: {stock.name} </p>
-                                <p> Phone: {stock.phone} </p>
-                                <p> Weburl: {stock.weburl} </p>
-                                <p> Logo: {stock.logo} </p>
-                                <p> Country: {stock.country} </p>
-                            </li>
+                            <div className='singleStock_container'>
+                                <li key={index}>
+                                    <p> Ticker: {stock.ticker} </p>
+                                    <p> Exchange: {stock.exchange} </p>
+                                    <p> Name: {stock.name} </p>
+                                    <p> Phone: {stock.phone} </p>
+                                    <p> Weburl: {stock.weburl} </p>
+                                    {/* <p> Logo: {stock.logo} </p> */}
+                                    <p> Country: {stock.country} </p>
+                                </li>
+                            </div>
                         )) 
                     ) : (
                             <div>

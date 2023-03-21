@@ -25,6 +25,10 @@ function App() {
     stock: "",
   });
 
+  // useEffect(() => {
+  //   console.log(prevStocks);
+  // }, [prevStocks]);
+
   const callAPI = async (query) => {
     const response = await fetch(query);
     const json = await response.json();
@@ -43,11 +47,29 @@ function App() {
         "country": json.country,
       });
 
-      setPrevStocks((prevState) => ([...prevState, currentStock]));
-      prevStocks.map((stock) => console.log(stock));
+      setPrevStocks((prevStocks) => {
+        const filtered = prevStocks.filter((stock) => {
+          return stock.ticker !== json.ticker;
+        });
+
+        const updatedStocks = [...filtered, {
+          "ticker": json.ticker,
+          "exchange": json.exchange,
+          "name": json.name,
+          "phone": json.phone,
+          "weburl":  json.weburl,
+          "logo":  json.logo,
+          "country": json.country,
+        }];
+       
+        return updatedStocks;
+      });
+
+      // print the prevStocks array and print out its phone, weburl and logo
       reset();
     }
   }
+
 
   const getQuota = async () => {
     const response = await fetch("https://finnhub.io/api/v1/quote?symbol=AAPL&token=" + ACCESS_KEY);
